@@ -8,6 +8,8 @@ import Channels from "./pages/Channels";
 import Rooms from "./pages/Rooms";
 import Auth from "./pages/Auth";
 import ListProperty from "./pages/ListProperty";
+import RoomDetail from "./pages/RoomDetail";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
         <Route path="/channels" element={<Channels />} />
         <Route path="/list-property" element={<ListProperty />} />
         <Route path="/rooms" element={<Rooms />} />
+        <Route path="/rooms/:id" element={<RoomDetail />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </TooltipProvider>
   </QueryClientProvider>
