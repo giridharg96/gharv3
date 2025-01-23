@@ -19,51 +19,99 @@ const Rooms = () => {
 
   const rooms = [
     {
+      id: "1",
       title: "Modern Studio near PayPal Office",
       location: "Austin, TX",
-      price: "$1,200/month",
-      duration: "3 months",
-      image: "/placeholder.svg",
+      price_per_month: 1200,
+      stay_length: "3 months",
+      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+      description: "Bright and modern studio apartment with floor-to-ceiling windows and contemporary furnishings",
+      roommate: {
+        name: "Alex",
+        occupation: "Software Engineer at PayPal",
+        interests: ["Tech", "Hiking", "Photography"],
+        age: 25
+      }
     },
     {
+      id: "2",
       title: "Cozy Room in Tech District",
       location: "San Francisco, CA",
-      price: "$2,000/month",
-      duration: "6 months",
-      image: "/placeholder.svg",
+      price_per_month: 2000,
+      stay_length: "6 months",
+      image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-4.0.1&auto=format&fit=crop&w=2340&q=80",
+      description: "Stylish room in a shared apartment with a dedicated workspace and city views",
+      roommate: {
+        name: "Sarah",
+        occupation: "Product Manager at Meta",
+        interests: ["Yoga", "Cooking", "Startups"],
+        age: 27
+      }
     },
     {
+      id: "3",
       title: "Shared Apartment near Google",
       location: "Mountain View, CA",
-      price: "$1,500/month",
-      duration: "3 months",
-      image: "/placeholder.svg",
+      price_per_month: 1500,
+      stay_length: "3 months",
+      image: "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.1&auto=format&fit=crop&w=2340&q=80",
+      description: "Modern apartment with a spacious common area and fully equipped kitchen",
+      roommate: {
+        name: "Mike",
+        occupation: "Software Engineer at Google",
+        interests: ["Gaming", "Basketball", "AI"],
+        age: 24
+      }
     },
     {
+      id: "4",
       title: "Downtown Loft near Meta",
       location: "Seattle, WA",
-      price: "$1,800/month",
-      duration: "4 months",
+      price_per_month: 1800,
+      stay_length: "4 months",
       image: "/placeholder.svg",
+      description: "Stylish loft in the heart of the city with stunning views",
+      roommate: {
+        name: "Emily",
+        occupation: "Data Scientist at Meta",
+        interests: ["Reading", "Traveling", "Art"],
+        age: 26
+      }
     },
     {
+      id: "5",
       title: "Student Housing near Microsoft",
       location: "Redmond, WA",
-      price: "$1,300/month",
-      duration: "6 months",
+      price_per_month: 1300,
+      stay_length: "6 months",
       image: "/placeholder.svg",
+      description: "Affordable student housing with a vibrant community",
+      roommate: {
+        name: "Daniel",
+        occupation: "Student at University of Washington",
+        interests: ["Sports", "Music", "Technology"],
+        age: 20
+      }
     },
     {
+      id: "6",
       title: "Tech Hub Apartment",
       location: "San Jose, CA",
-      price: "$1,700/month",
-      duration: "3 months",
+      price_per_month: 1700,
+      stay_length: "3 months",
       image: "/placeholder.svg",
+      description: "Modern apartment in the heart of Silicon Valley",
+      roommate: {
+        name: "Olivia",
+        occupation: "Software Developer at Google",
+        interests: ["Tech", "Gaming", "Hiking"],
+        age: 23
+      }
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       <main className="container mx-auto px-4 pt-24">
@@ -120,8 +168,18 @@ const Rooms = () => {
 
         {/* Room Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {rooms.map((room, index) => (
-            <RoomCard key={index} {...room} />
+          {rooms.map((room) => (
+            <RoomCard
+              key={room.id}
+              id={room.id}
+              title={room.title}
+              location={room.location}
+              price={`$${room.price_per_month}/month`}
+              duration={`${room.stay_length}`}
+              image={room.image}
+              description={room.description}
+              roommate={room.roommate}
+            />
           ))}
         </div>
       </main>
