@@ -3,13 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
-import Index from "@/pages/Index";
-import Channels from "@/pages/Channels";
-import Rooms from "@/pages/Rooms";
-import Auth from "@/pages/Auth";
-import ListProperty from "@/pages/ListProperty";
-import RoomDetail from "@/pages/RoomDetail";
-import About from "@/pages/About";
+import Index from "./pages/Index";
+import Channels from "./pages/Channels";
+import Rooms from "./pages/Rooms";
+import Auth from "./pages/Auth";
+import ListProperty from "./pages/ListProperty";
+import RoomDetail from "./pages/RoomDetail";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
