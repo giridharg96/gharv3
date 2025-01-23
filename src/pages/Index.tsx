@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Search, MapPin, Calendar, DollarSign } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { PartnersSection } from "@/components/PartnersSection";
 
 export default function Index() {
   const [featuredRooms, setFeaturedRooms] = useState([
@@ -105,6 +106,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <PartnersSection />
 
       {/* Featured Listings */}
       <section className="py-16 px-4">

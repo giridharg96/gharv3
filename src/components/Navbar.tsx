@@ -5,6 +5,7 @@ import { Home } from "lucide-react";
 
 export function Navbar() {
   const [session, setSession] = useState<any>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -21,11 +22,11 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed w-full top-0 z-[100] bg-white/80 backdrop-blur-sm border-b">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="fixed w-full top-0 z-[9999] bg-white/80 backdrop-blur-sm border-b">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between relative">
         <Link 
           to="/" 
-          className="text-xl font-bold flex items-center gap-2 hover:text-primary transition-colors relative z-[101]"
+          className="text-xl font-bold flex items-center gap-2 hover:text-primary transition-colors"
         >
           <Home className="h-5 w-5" />
           StayIntern
